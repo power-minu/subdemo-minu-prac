@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰 게시판</title>
+</head>
+
+<body>
+
+<div>
+    <h3>리뷰 게시판</h3>
+    <h1><a th:href="|/|">[[홈]]</a></h1>
+    <hr/>
+
+    <table>
+        <tr th:each="review : ${reviews}">
+            <td th:text="${review.id}"></td>
+            <td th:text="${review.member}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+
+</html>

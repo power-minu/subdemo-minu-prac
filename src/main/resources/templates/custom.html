@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>레시피 커스텀</title>
+</head>
+<body>
+
+<div>
+    <h1><a th:href="|/|">[[홈으로]]</a></h1> <hr/>
+    <h2>레시피 커스텀</h2>
+    <form th:method="post" th:action="|@{/recipe/custom}|" th:object="${recipeRequest}">
+        <div>
+            <label th:for="bread">빵 선택 : </label>
+            <input type="text" th:field="*{bread}" th:errorclass="error-input"/>
+            <div class="error-class" th:errors="*{bread}"></div>
+        </div>
+        <br/>
+        <div>
+            <label th:for="mainStuff">메뉴 선택 : </label>
+            <input type="text" th:field="*{mainStuff}" th:errorclass="error-input"/>
+            <div class="error-class" th:errors="*{mainStuff}"></div>
+        </div>
+        <br/>
+        <button type="submit">저장하기</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+<style>
+    .error-class {
+        color: red;
+    }
+    .error-input {
+        border-color: red;
+    }
+</style>
